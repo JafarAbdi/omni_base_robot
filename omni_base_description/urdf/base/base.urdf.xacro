@@ -78,6 +78,20 @@
       <child link="${name}_link" />
       <parent link="${name}_footprint"/>
     </joint>
+    <link name="${name}_connection"/>
+
+    <joint name="${name}_connection_joint" type="fixed">
+      <origin xyz="0 0.08 0" rpy="0 0 0" />
+      <child link="${name}_footprint" />
+      <parent link="${name}_connection"/>
+    </joint>
+
+    <link name="${name}_connection2"/>
+    <joint name="${name}_connection_joint2" type="fixed">
+      <origin xyz="0 -0.08 0" rpy="0 0 0" />
+      <child link="${name}_footprint" />
+      <parent link="${name}_connection2"/>
+    </joint>
 
   <!-- gazebo parameters are given here for base_link through base_footprint -->
     <gazebo reference="${name}_footprint">
